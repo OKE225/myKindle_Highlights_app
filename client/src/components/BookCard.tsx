@@ -1,5 +1,7 @@
+import type Book from "../types/Book";
+
 interface Props {
-  book: { title: string; highlights: [] };
+  book: Book;
 }
 
 const BookCard = ({ book }: Props) => {
