@@ -17,7 +17,7 @@ const App = () => {
       const formData = new FormData();
       formData.append("highlights_file", file);
 
-      fetch("https://mykindle-highlights.onrender.com/upload", {
+      fetch("http://localhost:5001/upload", {
         method: "POST",
         body: formData,
       })
