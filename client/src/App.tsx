@@ -1,12 +1,12 @@
 import type { ChangeEvent } from "react";
-import BooksList from "./components/BooksList";
-import Header from "./components/Header";
-import UploadFileBtn from "./components/UploadFileBtn";
-import { AppContext } from "./AppContext";
+import { AppContext, defaultObject } from "./AppContext";
 import { useState } from "react";
+import { BrowserRouter, Route, Routes } from "react-router";
+import HomePage from "./components/HomePage";
+import BookHighlightsPage from "./components/BookHighlightsPage";
 
 const App = () => {
-  const [allBooksList, setAllBooksList] = useState([]);
+  const [allBooksList, setAllBooksList] = useState(defaultObject.allBooksList);
 
   const fetchFileAndUploadDataFromServer = (
     e: ChangeEvent<HTMLInputElement>
@@ -28,14 +28,14 @@ const App = () => {
   };
 
   return (
-    <AppContext.Provider value={{ allBooksList }}>
-      <>
-        <Header />
-        <BooksList />
-        <UploadFileBtn
-          fetchFileAndUploadDataFromServer={fetchFileAndUploadDataFromServer}
-        />
-      </>
+    <AppContext.Provider
+      value={{ allBooksList, setBooks: fetchFileAndUploadDataFromServer }}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/:bookName" element={<BookHighlightsPage />} />
+        </Routes>
+      </BrowserRouter>
     </AppContext.Provider>
   );
 };

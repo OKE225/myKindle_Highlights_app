@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import type Book from "../types/Book";
 
 interface Props {
@@ -7,10 +8,12 @@ interface Props {
 const BookCard = ({ book }: Props) => {
   return (
     // <div className="bg-brown-400 py-14 rounded-sm text-center">
-    <div className="bg-brown-200">
-      <span className="text-4xl">📖</span>
-      <h2 className="text-2xl">{book.title}</h2>
-    </div>
+    <Link to={book.title}>
+      <div className="bg-brown-200">
+        <span className="text-4xl">📖</span>
+        <h2 className="text-2xl">{book.title}</h2>
+      </div>
+    </Link>
   );
 };
 

@@ -1,11 +1,10 @@
-import { useRef, type ChangeEvent } from "react";
+import { useContext, useRef } from "react";
+import { AppContext } from "../AppContext";
 
-interface Props {
-  fetchFileAndUploadDataFromServer: (e: ChangeEvent<HTMLInputElement>) => void;
-}
-
-const UploadFileBtn = ({ fetchFileAndUploadDataFromServer }: Props) => {
+const UploadFileBtn = () => {
   const inputRef = useRef<HTMLInputElement>(null);
+
+  const { setBooks } = useContext(AppContext);
 
   const handleClick = () => {
     if (inputRef.current) {
@@ -20,7 +19,7 @@ const UploadFileBtn = ({ fetchFileAndUploadDataFromServer }: Props) => {
         accept=".txt"
         className="hidden"
         ref={inputRef}
-        onChange={fetchFileAndUploadDataFromServer}
+        onChange={setBooks}
       />
       <button
         className="bg-brown-900 text-brown-50 px-5 py-3 m-10 text-lg rounded-sm cursor-pointer hover:bg-brown-800"
