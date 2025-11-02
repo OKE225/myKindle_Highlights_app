@@ -8,7 +8,7 @@ interface Props {
 const BookCard = ({ book }: Props) => {
   return (
     // <div className="bg-brown-400 py-14 rounded-sm text-center">
-    <Link to={book.title}>
+    <Link to={book.title} state={{ book }}>
       <div className="bg-brown-200">
         <span className="text-4xl">📖</span>
         <h2 className="text-2xl">{book.title}</h2>
