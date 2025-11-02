@@ -1,5 +1,7 @@
 import { useLocation } from "react-router";
 import type Book from "../types/Book";
+import Header from "./Header";
+import HighlightsList from "./HighlightsList";
 
 const BookHighlightsPage = () => {
   const location = useLocation();
@@ -7,9 +9,9 @@ const BookHighlightsPage = () => {
 
   return (
     <div>
-      <h1 className="bg-brown-900 text-5xl py-8 px-5 font-light text-brown-50">
-        {book.title}
-      </h1>
+      <Header />
+      <h1 className="text-4xl">{book.title}</h1>
+      <HighlightsList highlights={book.highlights} />
     </div>
   );
 };
