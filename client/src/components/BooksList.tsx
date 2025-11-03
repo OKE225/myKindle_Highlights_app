@@ -7,10 +7,10 @@ const BooksList = () => {
   const { allBooksList } = useContext(AppContext);
 
   return (
-    <>
+    <div className="mb-15">
       <h2 className="text-4xl">Your books</h2>
       {allBooksList.length > 0 ? (
-        <div className="grid grid-cols-4 gap-2 m-5">
+        <div className="grid grid-cols-4 gap-2 mt-5">
           {allBooksList.map((book: Book) => (
             <BookCard key={book.title} book={book} />
           ))}
@@ -18,7 +18,7 @@ const BooksList = () => {
       ) : (
         <p>You don't have any books</p>
       )}
-    </>
+    </div>
   );
 };
 

@@ -7,12 +7,12 @@ interface Props {
 
 const BookCard = ({ book }: Props) => {
   return (
-    // <div className="bg-brown-400 py-14 rounded-sm text-center">
-    <Link to={book.title} state={{ book }}>
-      <div className="bg-brown-200">
-        <span className="text-4xl">📖</span>
-        <h2 className="text-2xl">{book.title}</h2>
-      </div>
+    <Link
+      to={book.title}
+      state={{ book }}
+      className="bg-brown-500 text-white rounded-sm text-center flex flex-col justify-center p-5">
+      <span className="text-4xl">📖</span>
+      <h2 className="text-2xl font-light">{book.title}</h2>
     </Link>
   );
 };

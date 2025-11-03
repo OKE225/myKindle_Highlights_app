@@ -6,8 +6,10 @@ const HomePage = () => {
   return (
     <>
       <Header />
-      <BooksList />
-      <UploadFileBtn />
+      <div className="mx-10 my-5">
+        <BooksList />
+        <UploadFileBtn />
+      </div>
     </>
   );
 };

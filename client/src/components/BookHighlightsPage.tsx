@@ -13,11 +13,13 @@ const BookHighlightsPage = () => {
   }
 
   return (
-    <div>
+    <>
       <Header />
-      <h1 className="text-4xl">{book.title}</h1>
-      <HighlightsList highlights={book.highlights} />
-    </div>
+      <div className="mx-10 my-5">
+        <h1 className="text-4xl">{book.title}</h1>
+        <HighlightsList highlights={book.highlights} />
+      </div>
+    </>
   );
 };
 
