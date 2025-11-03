@@ -22,7 +22,7 @@ const UploadFileBtn = () => {
         onChange={setBooks}
       />
       <button
-        className="bg-brown-900 text-brown-50 px-5 py-3 m-10 text-lg rounded-sm cursor-pointer hover:bg-brown-800"
+        className="bg-brown-900 text-brown-50 px-5 py-3 m-10 rounded-sm cursor-pointer hover:bg-brown-800"
         onClick={handleClick}>
         Upload File
       </button>
