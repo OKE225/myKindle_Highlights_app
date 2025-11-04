@@ -20,6 +20,7 @@ const UploadFileBtn = () => {
         className="hidden"
         ref={inputRef}
         onChange={setBooks}
+        data-testid="file-input"
       />
       <button
         className="bg-brown-900 text-white px-5 py-3 rounded-sm cursor-pointer hover:bg-brown-800 disabled:bg-stone-700 disabled:cursor-default"
