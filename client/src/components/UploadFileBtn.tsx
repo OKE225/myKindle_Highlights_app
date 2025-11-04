@@ -22,7 +22,7 @@ const UploadFileBtn = () => {
         onChange={setBooks}
       />
       <button
-        className="bg-brown-900 text-white px-5 py-3 rounded-sm cursor-pointer hover:bg-brown-800 disabled:bg-stone-600 disabled:cursor-default"
+        className="bg-brown-900 text-white px-5 py-3 rounded-sm cursor-pointer hover:bg-brown-800 disabled:bg-stone-700 disabled:cursor-default"
         disabled={fetchIsLoading}
         // disabled={true}
         onClick={handleClick}>

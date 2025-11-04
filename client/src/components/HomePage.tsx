@@ -6,7 +6,7 @@ const HomePage = () => {
   return (
     <>
       <Header />
-      <div className="mx-10 my-5">
+      <div className="m-10">
         <BooksList />
         <UploadFileBtn />
       </div>

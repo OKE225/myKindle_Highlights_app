@@ -12,7 +12,7 @@ const BookCard = ({ book }: Props) => {
       state={{ book }}
       className="bg-brown-500 text-white rounded-sm text-center flex flex-col justify-center p-5">
       <span className="text-4xl">📖</span>
-      <h2 className="text-2xl font-light">{book.title}</h2>
+      <h2 className="text-2xl">{book.title}</h2>
     </Link>
   );
 };
