@@ -4,7 +4,7 @@ import { AppContext } from "../AppContext";
 const UploadFileBtn = () => {
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const { setBooks } = useContext(AppContext);
+  const { setBooks, fetchIsLoading } = useContext(AppContext);
 
   const handleClick = () => {
     if (inputRef.current) {
@@ -22,9 +22,12 @@ const UploadFileBtn = () => {
         onChange={setBooks}
       />
       <button
-        className="bg-brown-900 text-white px-5 py-3 rounded-sm cursor-pointer hover:bg-brown-800"
+        className="bg-brown-900 text-white px-5 py-3 rounded-sm cursor-pointer hover:bg-brown-800 disabled:bg-stone-600 disabled:cursor-default"
+        disabled={fetchIsLoading}
+        // disabled={true}
         onClick={handleClick}>
-        Upload File
+        {fetchIsLoading ? "Loading..." : "Upload File"}
+        {/* Loading... */}
       </button>
     </div>
   );

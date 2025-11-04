@@ -4,14 +4,20 @@ import { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router";
 import HomePage from "./components/HomePage";
 import BookHighlightsPage from "./components/BookHighlightsPage";
+import type Book from "./types/Book";
 
 const App = () => {
-  const [allBooksList, setAllBooksList] = useState(defaultObject.allBooksList);
+  const [allBooksList, setAllBooksList] = useState<Book[]>(
+    defaultObject.allBooksList
+  );
+  const [fetchIsLoading, setFetchIsLoading] = useState<boolean>(false);
 
   const fetchFileAndUploadDataFromServer = (
     e: ChangeEvent<HTMLInputElement>
   ) => {
     if (e.target.files && e.target.files.length > 0) {
+      setFetchIsLoading(true);
+
       const file = e.target.files[0];
 
       const formData = new FormData();
@@ -22,14 +28,24 @@ const App = () => {
         body: formData,
       })
         .then((response) => response.json())
-        .then((data) => setAllBooksList(data))
-        .catch((error) => console.error("Error uploading file:", error));
+        .then((data) => {
+          setAllBooksList(data);
+          setFetchIsLoading(false);
+        })
+        .catch((error) => {
+          console.error("Error uploading file:", error);
+          setFetchIsLoading(false);
+        });
     }
   };
 
   return (
     <AppContext.Provider
-      value={{ allBooksList, setBooks: fetchFileAndUploadDataFromServer }}>
+      value={{
+        allBooksList,
+        setBooks: fetchFileAndUploadDataFromServer,
+        fetchIsLoading,
+      }}>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<HomePage />} />
