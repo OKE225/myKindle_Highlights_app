@@ -1,4 +1,5 @@
 import HighlightCard from "./HighlightCard";
+import HighlightsCount from "./HighlightsCount";
 
 interface Props {
   highlights: [];
@@ -7,7 +8,7 @@ interface Props {
 const HighlightsList = ({ highlights }: Props) => {
   return (
     <div>
-      <p className="mt-1 text-zinc-700">{highlights.length} Highlights</p>
+      <HighlightsCount count={highlights.length} />
       <hr className="my-5" />
       <div className="grid grid-cols-2 gap-1">
         {highlights.map((highlight) => (
