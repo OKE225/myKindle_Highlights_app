@@ -5,7 +5,7 @@ interface Props {
   };
 }
 
-const Highlight = ({ info: { metadata, text } }: Props) => {
+const HighlightCard = ({ info: { metadata, text } }: Props) => {
   return (
     <div className="bg-stone-50 shadow p-5 rounded-sm">
       <h4 className="text-2xl mb-1">{text}</h4>
@@ -14,4 +14,4 @@ const Highlight = ({ info: { metadata, text } }: Props) => {
   );
 };
 
-export default Highlight;
+export default HighlightCard;
