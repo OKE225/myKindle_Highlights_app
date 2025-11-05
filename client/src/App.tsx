@@ -31,6 +31,8 @@ const App = () => {
         .then((data) => {
           setAllBooksList(data);
           setFetchIsLoading(false);
+
+          localStorage.setItem("booksArr", JSON.stringify(data));
         })
         .catch((error) => {
           console.error("Error uploading file:", error);
@@ -39,10 +41,12 @@ const App = () => {
     }
   };
 
+  const savedBookArr = localStorage.getItem("booksArr");
+
   return (
     <AppContext.Provider
       value={{
-        allBooksList,
+        allBooksList: savedBookArr ? JSON.parse(savedBookArr) : allBooksList,
         setBooks: fetchFileAndUploadDataFromServer,
         fetchIsLoading,
       }}>
