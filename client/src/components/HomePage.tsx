@@ -1,6 +1,7 @@
 import Header from "./Header";
 import BooksList from "./BooksList";
 import UploadFileBtn from "./UploadFileBtn";
+import ClearBooksListBtn from "./ClearBooksListBtn";
 
 const HomePage = () => {
   return (
@@ -9,6 +10,7 @@ const HomePage = () => {
       <div className="m-10">
         <BooksList />
         <UploadFileBtn />
+        <ClearBooksListBtn />
       </div>
     </>
   );
