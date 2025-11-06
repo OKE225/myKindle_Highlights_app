@@ -2,11 +2,7 @@ import { render, screen } from "@testing-library/react";
 import HighlightCard from "./HighlightCard";
 
 test("render heading and paragraph", () => {
-  render(
-    <HighlightCard
-      info={{ text: "highlight text", metadata: "highlight info" }}
-    />
-  );
+  render(<HighlightCard text="highlight text" metadata="highlight info" />);
 
   const heading = screen.getByRole("heading");
   const paragraph = screen.getByRole("paragraph");
