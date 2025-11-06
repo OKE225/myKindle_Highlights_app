@@ -2,6 +2,7 @@ import { useContext } from "react";
 import BookCard from "./BookCard";
 import { AppContext } from "../AppContext";
 import type Book from "../types/Book";
+import BookMotivateQuote from "./BookMotivateQuote";
 
 const BooksList = () => {
   const { allBooksList, fetchIsLoading } = useContext(AppContext);
@@ -18,7 +19,13 @@ const BooksList = () => {
       ) : (
         <>
           <p>You don't have any books</p>
-          {fetchIsLoading && <div className="loader bg-stone-600 mt-5"></div>}
+
+          {fetchIsLoading && (
+            <>
+              <div className="loader bg-stone-500 mt-5"></div>
+              <BookMotivateQuote />
+            </>
+          )}
         </>
       )}
     </div>
