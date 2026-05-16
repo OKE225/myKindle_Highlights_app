@@ -1,12 +1,10 @@
-import { AuthButton } from "@/components/auth-button";
-import { Suspense } from "react";
+import Header from "@/components/ui/Header";
 
 export default function Home() {
   return (
-    <main className="">
-      <Suspense fallback={<div>Loading...</div>}>
-        <AuthButton />
-      </Suspense>
+    <main>
+      <Header />
+      Strona główna
     </main>
   );
 }
