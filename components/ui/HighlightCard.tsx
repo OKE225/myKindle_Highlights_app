@@ -7,7 +7,7 @@ export default function HighlightCard({ createdAt, text }: Highlight) {
   const date = createdAt instanceof Date ? createdAt : new Date(createdAt);
 
   return (
-    <div className="border-2 p-2">
+    <div className="border-2 p-2 rounded">
       <div>
         <h4>{text}</h4>
       </div>

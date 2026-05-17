@@ -5,6 +5,7 @@ import { createClient } from "@/lib/supabase/client";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import SocialAuthButtons from "./ui/SocialAuthButtons";
 
 export function SignUpForm({
   className,
@@ -54,6 +55,7 @@ export function SignUpForm({
           <div>Create a new account</div>
         </div>
         <div>
+          <SocialAuthButtons />
           <form onSubmit={handleSignUp}>
             <div className="flex flex-col gap-6">
               <div className="grid gap-2">
