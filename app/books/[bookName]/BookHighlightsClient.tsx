@@ -6,8 +6,8 @@ import { AppContext } from "../../../AppContext";
 import { Book } from "@/lib/types";
 import BookNotFound from "../../not-found";
 import { separateTitleAndAuthor } from "@/lib/separateTitleAndAuthor";
-import SideBooksList from "@/components/ui/SideBooksList";
-import HighlightsList from "@/components/ui/HighlightsList";
+import SideBooksList from "@/components/SideBooksList";
+import HighlightsList from "@/components/HighlightsList";
 
 export default function BookHighlightsClient() {
   const params = useParams<{ bookName: string }>();

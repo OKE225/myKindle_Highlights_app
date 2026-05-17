@@ -1,8 +1,8 @@
 "use client";
 
-import BooksList from "@/components/ui/BooksList";
-import UploadFileBtn from "@/components/ui/UploadFileBtn";
-import ClearBooksListBtn from "@/components/ui/ClearBooksListBtn";
+import BooksList from "@/components/BooksList";
+import UploadFileBtn from "@/components/UploadFileBtn";
+import ClearBooksListBtn from "@/components/ClearBooksListBtn";
 import { useContext } from "react";
 import { AppContext } from "@/AppContext";
 
