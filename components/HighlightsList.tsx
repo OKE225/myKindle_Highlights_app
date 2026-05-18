@@ -20,7 +20,7 @@ export default function HighlightsList({
   const [sortKey, setSortKey] = useState<SortKey>(() => {
     if (typeof window !== "undefined") {
       const saved = localStorage.getItem("sortHighlightsKey");
-      return ["Oldest", "Newest"].includes(saved as string)
+      return ["Oldest", "Newest", "A-Z", "Z-A"].includes(saved as string)
         ? (saved as SortKey)
         : "Newest";
     }
