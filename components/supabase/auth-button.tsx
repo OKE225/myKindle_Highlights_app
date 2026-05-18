@@ -11,10 +11,12 @@ export async function AuthButton() {
   const user = data.user;
 
   const avatarUrl =
-    user?.user_metadata?.avatar_url ?? user?.user_metadata?.picture ?? null;
+    user?.user_metadata?.avatar_url ??
+    user?.user_metadata?.picture ??
+    "/user.png";
 
   return user ? (
-    <div className="flex items-center gap-4">
+    <div className="flex items-center gap-2">
       Hey, {user.email}!
       {avatarUrl && (
         <Image
