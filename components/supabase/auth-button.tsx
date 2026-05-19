@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { createClient } from "@/lib/supabase/server";
-import Image from "next/image";
-import { LogoutButton } from "./logout-button";
+import UserProfile from "../UserProfile";
 
 export async function AuthButton() {
   const supabase = await createClient();
@@ -10,32 +9,17 @@ export async function AuthButton() {
 
   const user = data.user;
 
-  const avatarUrl =
-    user?.user_metadata?.avatar_url ??
-    user?.user_metadata?.picture ??
-    "/user.png";
-
   return user ? (
     <div className="flex items-center gap-2">
-      Hey, {user.email}!
-      {avatarUrl && (
-        <Image
-          src={avatarUrl}
-          alt={user.email ?? "User avatar"}
-          width={25}
-          height={25}
-          className="rounded-full object-cover"
-        />
-      )}
-      <LogoutButton />
+      <UserProfile user={user} />
     </div>
   ) : (
     <div className="flex gap-2">
-      <button>
-        <Link href="/auth/login">Sign in</Link>
+      <button className="bg-transparent">
+        <Link href="/auth/login">Zaloguj się</Link>
       </button>
-      <button>
-        <Link href="/auth/sign-up">Sign up</Link>
+      <button className="bg-[var(--color-brown-600)]">
+        <Link href="/auth/sign-up">Zarejestruj się</Link>
       </button>
     </div>
   );
