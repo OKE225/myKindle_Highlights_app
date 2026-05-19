@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
+import { Crimson_Text, Gantari } from "next/font/google";
 import "./globals.css";
 import { AppProvider } from "../AppContext";
 
@@ -13,9 +13,15 @@ export const metadata: Metadata = {
   description: "The fastest way to build apps with Next.js and Supabase",
 };
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  display: "swap",
+const crimsonText = Crimson_Text({
+  variable: "--font-crimson-text",
+  weight: ["400", "600", "700"],
+  subsets: ["latin"],
+});
+
+const gantari = Gantari({
+  variable: "--font-gantari",
+  weight: ["300", "400", "500", "600", "700"],
   subsets: ["latin"],
 });
 
@@ -25,8 +31,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`${geistSans.className} antialiased`}>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${gantari.variable} ${gantari.className} ${crimsonText.variable} ${crimsonText.className}`}>
+      <body className={`antialiased bg-[var(--color-brown-1000)]`}>
         <AppProvider>{children}</AppProvider>
       </body>
     </html>
