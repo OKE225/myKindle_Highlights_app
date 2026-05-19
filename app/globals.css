@@ -3,27 +3,62 @@
 @tailwind utilities;
 
 @layer base {
+  * {
+    @apply text-zinc-50;
+  }
+
   input,
   button {
     @apply py-0.5;
   }
+
   input {
     @apply border border-black rounded px-1;
   }
+
   button {
-    @apply bg-zinc-600 text-white rounded px-2 cursor-pointer hover:bg-zinc-700;
+    @apply rounded-full px-3 cursor-pointer;
   }
 }
 
 :root {
-  --color-brown-50: #efebe9;
-  --color-brown-100: #d7ccc8;
-  --color-brown-200: #bcaaa4;
-  --color-brown-300: #a1887f;
-  --color-brown-400: #8d6e63;
-  --color-brown-500: #795548;
-  --color-brown-600: #6d4c41;
-  --color-brown-700: #5d4037;
-  --color-brown-800: #4e342e;
-  --color-brown-900: #3e2723;
+  /* --color-brown-50: #ffedd8;
+  --color-brown-100: #f3d5b5;
+  --color-brown-200: #e7bc91;
+  --color-brown-300: #d4a276;
+  --color-brown-400: #bc8a5f;
+  --color-brown-500: #a47148;
+  --color-brown-600: #8b5e34;
+  --color-brown-700: #6f4518;
+  --color-brown-800: #603808;
+  --color-brown-900: #583101;
+  --color-brown-950: #31200c;
+  --color-brown-1000: #190e00; */
+  /* https://coolors.co/palette/ffedd8-f3d5b5-e7bc91-d4a276-bc8a5f-a47148-8b5e34-6f4518-603808-583101 */
+
+  /* --color-brown-100: #e5d4c3;
+  --color-brown-200: #e5c9ae;
+  --color-brown-300: #debea2;
+  --color-brown-400: #d6ab7d;
+  --color-brown-500: #b3895d;
+  --color-brown-600: #9b744a;
+  --color-brown-700: #81583a;
+  --color-brown-800: #734f38;
+  --color-brown-900: #553725;
+  --color-brown-950: #482919;
+  --color-brown-1000: #190e00; */
+  /* https://coolors.co/palette/e5d4c3-e5c9ae-debea2-d6ab7d-b3895d-9b744a-81583a-734f38-553725-482919/ */
+
+  --color-brown-100: #f9f5f3;
+  --color-brown-200: #f0e5e1;
+  --color-brown-300: #e6d5ce;
+  --color-brown-400: #d3b6ab;
+  --color-brown-500: #aa8b7e;
+  --color-brown-600: #815f51;
+  --color-brown-700: #644234;
+  --color-brown-800: #4d3328;
+  --color-brown-900: #422c22;
+  --color-brown-950: #36241c;
+  --color-brown-1000: #0f0a08;
+  /* https://coolors.co/palette/36241c-422c22-4d3328-644234-815f51-aa8b7e-d3b6ab-e6d5ce-f0e5e1-f9f5f3 */
 }
