@@ -14,22 +14,21 @@ export default function BookHighlightsClient() {
   const { allBooksList } = useContext(AppContext);
 
   const decoded = decodeURIComponent(params.bookName);
-  const currentBook = allBooksList.find((book: Book) => book.title === decoded);
+  const currentBook = allBooksList.find((book: Book) => book.id === decoded);
 
   if (!currentBook) return <BookNotFound />;
 
   const { title, author } = separateTitleAndAuthor(currentBook.title);
 
   return (
-    <>
+    <div className="w-[95%] max-w-7xl mx-auto">
+      <p>Lista Twoich książek</p>
+      <SideBooksList />
       <div>
-        <SideBooksList />
-        <div>
-          <h1>{title}</h1>
-          <p>{author}</p>
-          <HighlightsList highlights={currentBook.highlights} />
-        </div>
+        <h1>{title}</h1>
+        <p>{author}</p>
+        <HighlightsList highlights={currentBook.highlights} />
       </div>
-    </>
+    </div>
   );
 }

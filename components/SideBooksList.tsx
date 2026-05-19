@@ -16,9 +16,9 @@ const SideBooksList = () => {
   return (
     <aside>
       {allBooksList.map((book: Book, id) => {
-        const href = `/books/${encodeURIComponent(book.title)}`;
+        const href = `/books/${encodeURIComponent(book.id)}`;
         const { title } = separateTitleAndAuthor(book.title);
-        const isActive = book.title === currentTitle;
+        const isActive = book.id === currentTitle;
 
         return (
           <Link
