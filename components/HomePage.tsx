@@ -9,7 +9,7 @@ import { uploadFileCheck } from "@/lib/uploadFileCheck";
 
 const HomePage = () => {
   const [uploadError, setUploadError] = useState("");
-  const { setBooks } = useContext(AppContext);
+  const { setBooks, allBooksList } = useContext(AppContext);
 
   const handleUploadFile = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0] ?? null;
@@ -28,10 +28,11 @@ const HomePage = () => {
       <BooksList />
 
       {uploadError && <p className="text-red-500">{uploadError}</p>}
-      <div className="flex">
+
+      {allBooksList.length === 0 && (
         <UploadFileBtn onUpload={handleUploadFile} />
-        <ClearBooksListBtn />
-      </div>
+      )}
+      {allBooksList.length > 0 && <ClearBooksListBtn />}
     </div>
   );
 };
