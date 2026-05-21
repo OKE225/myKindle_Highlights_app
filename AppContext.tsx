@@ -91,6 +91,7 @@ export function AppProvider({ children }: PropsWithChildren) {
     try {
       setIsUploading(true);
       const file = e.target.files[0];
+
       const content = await file.text();
 
       const mod = await import("@sole/kindle-clippings-parser");
@@ -156,7 +157,8 @@ export function AppProvider({ children }: PropsWithChildren) {
   }, []);
 
   const clearBooks = useCallback(async () => {
-    if (!confirm("Are you sure?")) return;
+    if (!confirm("Are you sure you want to delete all data from the database?"))
+      return;
 
     await deleteAllBooks();
     setAllBooksList([]);
