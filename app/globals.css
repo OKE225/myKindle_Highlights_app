@@ -12,8 +12,9 @@
     @apply py-0.5;
   }
 
-  input {
-    @apply border border-black rounded px-1;
+  input,
+  select {
+    @apply border border-black rounded px-1 text-black;
   }
 
   button {

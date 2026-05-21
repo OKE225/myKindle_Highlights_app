@@ -3,16 +3,15 @@
 import { Highlight } from "@/lib/types";
 
 export default function HighlightCard({ createdAt, text }: Highlight) {
-  console.log(createdAt);
   const date = createdAt instanceof Date ? createdAt : new Date(createdAt);
 
   return (
-    <div className="border-2 p-2 rounded">
+    <div className="break-inside-avoid overflow-hidden">
       <div>
         <h4>{text}</h4>
       </div>
       <div>
-        <p className="text-xs">
+        <p className="text-xs text-zinc-500">
           {date.toLocaleDateString("pl-PL", {
             year: "numeric",
             month: "2-digit",

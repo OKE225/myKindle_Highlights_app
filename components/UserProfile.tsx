@@ -20,14 +20,14 @@ const UserProfile = ({ user }: props) => {
   return (
     <div className="relative">
       <div
-        className="flex justify-between items-center gap-1 cursor-pointer select-none bg-zinc-950/40 py-1.5 px-2 rounded-full"
+        className="flex justify-between items-center gap-1 cursor-pointer select-none bg-zinc-950/20 hover:bg-zinc-950/35 py-1.5 px-2 rounded-full"
         onClick={() => setIsDetailsShows((prev) => !prev)}>
         {avatarUrl && (
           <Image
             src={avatarUrl}
             alt={user.email ?? "User avatar"}
-            width={25}
-            height={25}
+            width={20}
+            height={20}
             className="rounded-full object-cover"
           />
         )}

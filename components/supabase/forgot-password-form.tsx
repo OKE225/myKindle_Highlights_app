@@ -45,7 +45,7 @@ export function ForgotPasswordForm({
           <div>
             <p className="text-sm text-muted-foreground">
               If you registered using your email and password, you will receive
-              a password reset email.
+              a password reset email
             </p>
           </div>
         </div>
@@ -66,7 +66,7 @@ export function ForgotPasswordForm({
                   <input
                     id="email"
                     type="email"
-                    placeholder="m@example.com"
+                    placeholder="name@example.com"
                     required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}

@@ -4,13 +4,13 @@ const maxSize = 2.5 * 1024 * 1000; // 3 MB
 
 export async function uploadFileCheck(file: File | null) {
   if (!file) {
-    return { ok: false, error: "Nie wybrano pliku" };
+    return { ok: false, error: "No file selected" };
   }
 
   if (file.size > maxSize) {
     return {
       ok: false,
-      error: "Plik może mieć maksymalnie 2.5 MB",
+      error: "File must be no larger than 2.5 MB",
     };
   }
 
@@ -18,7 +18,7 @@ export async function uploadFileCheck(file: File | null) {
   if (!isTxt) {
     return {
       ok: false,
-      error: "Dozwolony jest tylko plik z rozszerzeniem .txt",
+      error: "Only .txt files are allowed",
     };
   }
 

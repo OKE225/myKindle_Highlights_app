@@ -12,5 +12,9 @@ export function LogoutButton() {
     router.push("/");
   };
 
-  return <button onClick={logout}>Logout</button>;
+  return (
+    <button className="px-0 underline block m-auto mt-1" onClick={logout}>
+      Logout
+    </button>
+  );
 }

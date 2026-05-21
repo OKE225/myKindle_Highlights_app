@@ -57,22 +57,38 @@ export default function BooksList() {
 
   return (
     <div>
-      <h2>Your books</h2>
+      <h2 className="[font-family:var(--font-crimson-text)] text-4xl mt-10">
+        Your collection
+      </h2>
 
       {!hasHydrated ? (
         <p>Loading…</p>
       ) : allBooksList.length > 0 ? (
         <>
-          <SearchInput value={searchQuery} onChange={setSearchQuery} />
+          <div className="flex gap-1 mt-2">
+            <SearchInput
+              value={searchQuery}
+              onChange={setSearchQuery}
+              placeholder="Search book"
+            />
 
-          <SortElements sortKey={sortKey} setSortKey={setSortKey}>
-            <option value="Oldest">Oldest</option>
-            <option value="Newest">Newest</option>
-            <option value="A-Z">A-Z</option>
-            <option value="Z-A">Z-A</option>
-          </SortElements>
+            <SortElements sortKey={sortKey} setSortKey={setSortKey}>
+              <option value="Oldest" className="text-black">
+                Oldest
+              </option>
+              <option value="Newest" className="text-black">
+                Newest
+              </option>
+              <option value="A-Z" className="text-black">
+                A-Z
+              </option>
+              <option value="Z-A" className="text-black">
+                Z-A
+              </option>
+            </SortElements>
+          </div>
 
-          <div className="grid grid-cols-2 gap-1">
+          <div className="grid grid-cols-2 gap-1 mt-2">
             {paginatedBooks.map((book: Book, id) => (
               <BookCard key={`${id} ${book.title}`} book={book} />
             ))}

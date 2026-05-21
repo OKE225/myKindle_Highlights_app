@@ -5,7 +5,6 @@ import { useParams } from "next/navigation";
 import { AppContext } from "../../../AppContext";
 import { Book } from "@/lib/types";
 import BookNotFound from "../../not-found";
-import { separateTitleAndAuthor } from "@/lib/separateTitleAndAuthor";
 import SideBooksList from "@/components/SideBooksList";
 import HighlightsList from "@/components/HighlightsList";
 
@@ -18,15 +17,14 @@ export default function BookHighlightsClient() {
 
   if (!currentBook) return <BookNotFound />;
 
-  const { title, author } = separateTitleAndAuthor(currentBook.title);
-
   return (
-    <div className="w-[95%] max-w-7xl mx-auto">
-      <p>Lista Twoich książek</p>
+    <div className="w-[95%] max-w-7xl mx-auto mt-10 flex gap-10">
       <SideBooksList />
-      <div>
-        <h1>{title}</h1>
-        <p>{author}</p>
+      <div className="w-[70%]">
+        <h1 className="[font-family:var(--font-crimson-text)] text-5xl">
+          {currentBook.title}
+        </h1>
+        <p>{currentBook.author}</p>
         <HighlightsList highlights={currentBook.highlights} />
       </div>
     </div>

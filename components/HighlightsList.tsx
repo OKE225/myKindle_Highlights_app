@@ -62,16 +62,30 @@ export default function HighlightsList({
     <div>
       <HighlightsCount count={filteredHighlights.length} />
 
-      <SearchInput value={searchQuery} onChange={setSearchQuery} />
+      <div className="flex gap-1 mt-5">
+        <SearchInput
+          value={searchQuery}
+          onChange={setSearchQuery}
+          placeholder="Search highlight"
+        />
 
-      <SortElements sortKey={sortKey} setSortKey={setSortKey}>
-        <option value="Newest">Newest</option>
-        <option value="Oldest">Oldest</option>
-        <option value="A-Z">A-Z</option>
-        <option value="Z-A">Z-A</option>
-      </SortElements>
+        <SortElements sortKey={sortKey} setSortKey={setSortKey}>
+          <option value="Newest" className="text-black">
+            Newest
+          </option>
+          <option value="Oldest" className="text-black">
+            Oldest
+          </option>
+          <option value="A-Z" className="text-black">
+            A-Z
+          </option>
+          <option value="Z-A" className="text-black">
+            Z-A
+          </option>
+        </SortElements>
+      </div>
 
-      <div className="grid grid-cols-2 gap-1">
+      <div className="columns-1 sm:columns-2 lg:columns-3 space-y-10 gap-10 mt-2">
         {paginatedBooks.map((highlight, id) => (
           <HighlightCard
             key={id}

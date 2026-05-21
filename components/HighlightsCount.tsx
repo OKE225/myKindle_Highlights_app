@@ -1,5 +1,9 @@
 "use client";
 
 export default function HighlightsCount({ count }: { count: number }) {
-  return <p>{count === 1 ? `${count} Highlight` : `${count} Highlights`}</p>;
+  return (
+    <p className="text-zinc-500 text-sm">
+      {count === 1 ? `${count} highlight` : `${count} highlights`}
+    </p>
+  );
 }

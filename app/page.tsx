@@ -3,14 +3,16 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main>
+    <>
       <Header />
-      <p>Strona główna</p>
-      <Link
-        href="/books"
-        className="block w-fit text-sm bg-amber-800 text-white px-2 py-1 rounded">
-        Przejdź do moich książek
-      </Link>
-    </main>
+      <main className="w-[95%] max-w-7xl mx-auto">
+        <br />
+        <Link
+          href="/books"
+          className="block w-fit bg-[var(--color-brown-700)] text-white text-lg px-3 py-0.5 rounded-full">
+          Go to my books
+        </Link>
+      </main>
+    </>
   );
 }
