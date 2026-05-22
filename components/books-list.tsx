@@ -1,10 +1,10 @@
 "use client";
 
 import { useContext, useEffect, useState } from "react";
-import BookCard from "./BookCard";
-import SortElements from "./SortElements";
-import SearchInput from "./SearchInput";
-import Pagination from "./Pagination";
+import BookCard from "./book-card";
+import SortElements from "./sort-elements";
+import SearchInput from "./search-input";
+import Pagination from "./pagination";
 import { AppContext } from "@/AppContext";
 import { Book } from "@/lib/types";
 
@@ -88,7 +88,7 @@ export default function BooksList() {
             </SortElements>
           </div>
 
-          <div className="grid grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1 gap-1 mt-2">
+          <div className="grid grid-cols-2 max-lg:grid-cols-1 gap-1 mt-2">
             {paginatedBooks.map((book: Book, id) => (
               <BookCard key={`${id} ${book.title}`} book={book} />
             ))}

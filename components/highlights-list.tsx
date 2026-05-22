@@ -1,11 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import HighlightCard from "./HighlightCard";
-import HighlightsCount from "./HighlightsCount";
-import SortElements from "./SortElements";
-import SearchInput from "./SearchInput";
-import Pagination from "./Pagination";
+import HighlightCard from "./highlight-card";
+import HighlightsCount from "./highlights-count";
+import SortElements from "./sort-elements";
+import SearchInput from "./search-input";
+import Pagination from "./pagination";
 import { Highlight } from "@/lib/types";
 
 type SortKey = "Oldest" | "Newest" | "A-Z" | "Z-A";

@@ -5,7 +5,7 @@ import { createClient } from "@/lib/supabase/client";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import SocialAuthButtons from "../SocialAuthButtons";
+import SocialAuthButtons from "../social-auth-buttons";
 
 export function SignUpForm({
   className,

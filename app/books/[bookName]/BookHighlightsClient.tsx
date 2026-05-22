@@ -5,8 +5,8 @@ import { useParams } from "next/navigation";
 import { AppContext } from "../../../AppContext";
 import { Book } from "@/lib/types";
 import BookNotFound from "../../not-found";
-import SideBooksList from "@/components/SideBooksList";
-import HighlightsList from "@/components/HighlightsList";
+import SideBooksList from "@/components/side-books-list";
+import HighlightsList from "@/components/highlights-list";
 
 export default function BookHighlightsClient() {
   const params = useParams<{ bookName: string }>();

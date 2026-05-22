@@ -1,5 +1,5 @@
 import { createClient } from "@/lib/supabase/client";
-import SocialButton from "./SocialButton";
+import SocialButton from "./social-button";
 import Image from "next/image";
 
 type provider = "google" | "github";

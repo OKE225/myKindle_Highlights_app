@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { createClient } from "@/lib/supabase/server";
-import UserProfile from "../UserProfile";
+import UserProfile from "../user-profile";
 
 export async function AuthButton() {
   const supabase = await createClient();
