@@ -6,19 +6,19 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main className="max-w-5xl w-[95%] mx-auto">
-        <div className="flex gap-28 items-center justify-center mt-20">
+      <main className="max-w-5xl w-[95%] mx-auto mb-20">
+        <div className="flex gap-32 max-lg:gap-10 max-md:gap-16 flex-row max-md:flex-col items-center justify-center mt-20">
           <div>
-            <h1 className="[font-family:var(--font-crimson-text)] text-[var(--color-brown-100)] text-5xl">
+            <h1 className="[font-family:var(--font-crimson-text)] max-md:text-center text-[var(--color-brown-100)] text-5xl">
               Organize your favorite Kindle highlights in one place
             </h1>
-            <p className="text-[var(--color-brown-400)]">
+            <p className="text-[var(--color-brown-400)] mt-2 max-md:text-center max-md:w-[90%] max-md:mx-auto">
               Save, browse, and revisit the most important passages from your
               books. All neatly organized in one place
             </p>
             <Link
               href="/books"
-              className="block mx-auto mt-12 w-fit bg-[var(--color-brown-700)] text-white text-lg px-3 py-0.5 rounded-full ">
+              className="block mx-auto mt-12 w-fit bg-[var(--color-brown-700)] hover:bg-[var(--color-brown-800)] text-white text-xl px-3 py-0.5 rounded">
               Start managing your highlights
             </Link>
           </div>
@@ -27,11 +27,12 @@ export default function Home() {
             alt="kindle e-reader"
             width={250}
             height={300}
+            priority
             className="brightness-75"
           />
         </div>
 
-        <div className="grid grid-cols-3 gap-1 my-40">
+        <div className="grid grid-cols-3 gap-1 my-40 max-md:my-26 max-sm:grid-cols-1">
           <div className="bg-[var(--color-brown-950)] p-3 rounded">
             <span className=""></span>
             Better organization of your knowledge: keep the most important book
@@ -56,7 +57,7 @@ export default function Home() {
           <p className="text-[var(--color-brown-400)]">
             Organizing your Kindle highlights takes just a few clicks
           </p>
-          <ol className="grid grid-cols-2 mt-3">
+          <ol className="grid grid-cols-2 gap-8 mt-10 max-sm:grid-cols-1 max-sm:gap-4">
             <li>
               <h4 className="text-[var(--color-brown-700)] [font-family:var(--font-crimson-text)] text-2xl">
                 step 1
@@ -80,7 +81,7 @@ export default function Home() {
 
         <Link
           href="/books"
-          className="block mx-auto mt-32 w-fit bg-[var(--color-brown-700)] text-white text-lg px-3 py-0.5 rounded-full">
+          className="block mx-auto mt-40 max-sm:mt-24 w-fit bg-[var(--color-brown-700)] hover:bg-[var(--color-brown-800)] text-white text-lg px-3 py-0.5 rounded">
           See your highlights
         </Link>
       </main>
