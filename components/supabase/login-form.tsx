@@ -42,44 +42,53 @@ export function LoginForm({
     <div className={cn("flex flex-col gap-6", className)} {...props}>
       <div>
         <div>
-          <div className="text-2xl">Login</div>
-          <div>Enter your email below to login to your account</div>
+          <div className="text-3xl [font-family:var(--font-crimson-text)]">
+            Login
+          </div>
+          <div className="text-[var(--color-brown-400)]">
+            Enter your email below to login to your account
+          </div>
         </div>
         <div>
           <SocialAuthButtons />
           <form onSubmit={handleLogin}>
             <div className="flex flex-col gap-6">
-              <div className="grid gap-2">
-                <label htmlFor="email">Email</label>
-                <input
-                  id="email"
-                  type="email"
-                  placeholder="name@example.com"
-                  required
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-              </div>
-              <div className="grid gap-2">
-                <div className="flex items-center">
-                  <label htmlFor="password">Password</label>
-                  <Link
-                    href="/auth/forgot-password"
-                    className="ml-auto inline-block text-sm underline-offset-4 hover:underline">
-                    Forgot your password?
-                  </Link>
+              <div className="flex flex-col gap-4">
+                <div className="grid gap-2">
+                  <label htmlFor="email">Email</label>
+                  <input
+                    id="email"
+                    type="email"
+                    placeholder="name@example.com"
+                    required
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
                 </div>
-                <input
-                  id="password"
-                  type="password"
-                  placeholder="Enter password"
-                  required
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                />
+                <div className="grid gap-2">
+                  <div className="flex items-center">
+                    <label htmlFor="password">Password</label>
+                    <Link
+                      href="/auth/forgot-password"
+                      className="ml-auto inline-block text-sm underline-offset-4 hover:underline">
+                      Forgot your password?
+                    </Link>
+                  </div>
+                  <input
+                    id="password"
+                    type="password"
+                    placeholder="enter password"
+                    required
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
+                </div>
               </div>
               {error && <p className="text-sm text-red-500">{error}</p>}
-              <button type="submit" className="w-full" disabled={isLoading}>
+              <button
+                type="submit"
+                className="w-full bg-[var(--color-brown-700)]"
+                disabled={isLoading}>
                 {isLoading ? "Logging in..." : "Login"}
               </button>
             </div>

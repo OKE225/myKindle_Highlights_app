@@ -59,10 +59,10 @@ export default function HighlightsList({
   }, [sortKey]);
 
   return (
-    <div>
+    <div className="mb-6">
       <HighlightsCount count={filteredHighlights.length} />
 
-      <div className="flex gap-1 mt-5">
+      <div className="flex gap-1 mt-8">
         <SearchInput
           value={searchQuery}
           onChange={setSearchQuery}
@@ -85,7 +85,7 @@ export default function HighlightsList({
         </SortElements>
       </div>
 
-      <div className="columns-1 sm:columns-2 lg:columns-3 space-y-10 gap-10 mt-2">
+      <div className="columns-2 max-md:columns-1 space-y-10 gap-10 mt-2">
         {paginatedBooks.map((highlight, id) => (
           <HighlightCard
             key={id}

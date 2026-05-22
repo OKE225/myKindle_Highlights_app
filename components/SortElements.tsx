@@ -21,7 +21,7 @@ export default function SortElements({
   return (
     <select
       name="sort"
-      className="lowercase rounded bg-[var(--color-brown-200)]"
+      className="lowercase rounded"
       id="selectFloating"
       value={sortKey}
       onChange={handleSort}>

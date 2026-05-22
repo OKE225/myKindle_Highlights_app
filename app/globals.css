@@ -18,7 +18,7 @@
   }
 
   button {
-    @apply rounded-full px-3 cursor-pointer;
+    @apply rounded px-3 cursor-pointer;
   }
 }
 

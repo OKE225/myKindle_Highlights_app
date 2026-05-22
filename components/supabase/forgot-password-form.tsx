@@ -39,11 +39,13 @@ export function ForgotPasswordForm({
       {success ? (
         <div>
           <div>
-            <div className="text-2xl">Check Your Email</div>
+            <div className="text-3xl [font-family:var(--font-crimson-text)]">
+              Check Your Email
+            </div>
             <div>Password reset instructions sent</div>
           </div>
           <div>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm text-[var(--color-brown-400)] mt-4">
               If you registered using your email and password, you will receive
               a password reset email
             </p>
@@ -52,15 +54,17 @@ export function ForgotPasswordForm({
       ) : (
         <div>
           <div>
-            <div className="text-2xl">Reset Your Password</div>
-            <div>
+            <div className="text-3xl [font-family:var(--font-crimson-text)]">
+              Reset Your Password
+            </div>
+            <div className="text-[var(--color-brown-400)]">
               Type in your email and we&apos;ll send you a link to reset your
               password
             </div>
           </div>
           <div>
             <form onSubmit={handleForgotPassword}>
-              <div className="flex flex-col gap-6">
+              <div className="flex flex-col gap-6 my-4">
                 <div className="grid gap-2">
                   <label htmlFor="email">Email</label>
                   <input
@@ -73,7 +77,10 @@ export function ForgotPasswordForm({
                   />
                 </div>
                 {error && <p className="text-sm text-red-500">{error}</p>}
-                <button type="submit" className="w-full" disabled={isLoading}>
+                <button
+                  type="submit"
+                  className="w-full bg-[var(--color-brown-700)]"
+                  disabled={isLoading}>
                   {isLoading ? "Sending..." : "Send reset email"}
                 </button>
               </div>

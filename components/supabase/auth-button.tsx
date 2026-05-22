@@ -16,10 +16,10 @@ export async function AuthButton() {
   ) : (
     <div className="flex gap-2">
       <button className="bg-transparent">
-        <Link href="/auth/login">Zaloguj się</Link>
+        <Link href="/auth/login">Log In</Link>
       </button>
       <button className="bg-[var(--color-brown-600)]">
-        <Link href="/auth/sign-up">Zarejestruj się</Link>
+        <Link href="/auth/sign-up">Sign Up</Link>
       </button>
     </div>
   );

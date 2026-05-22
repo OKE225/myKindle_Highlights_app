@@ -18,9 +18,9 @@ export default function BookHighlightsClient() {
   if (!currentBook) return <BookNotFound />;
 
   return (
-    <div className="w-[95%] max-w-7xl mx-auto mt-10 flex gap-10">
+    <div className="w-[95%] max-w-7xl mx-auto mt-10 flex flex-row max-lg:flex-col gap-10">
       <SideBooksList />
-      <div className="w-[70%]">
+      <div className="w-[80%] max-lg:w-full">
         <h1 className="[font-family:var(--font-crimson-text)] text-5xl">
           {currentBook.title}
         </h1>

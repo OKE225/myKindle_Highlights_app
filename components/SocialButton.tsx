@@ -6,7 +6,7 @@ interface SocialButtonProps {
 const SocialButton = ({ children, action }: SocialButtonProps) => {
   return (
     <button
-      className="w-full flex items-center justify-center"
+      className="w-full flex items-center justify-center bg-[var(--color-brown-950)]"
       onClick={action}>
       {children}
     </button>

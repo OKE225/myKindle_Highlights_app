@@ -9,8 +9,8 @@ const defaultUrl = process.env.VERCEL_URL
 
 export const metadata: Metadata = {
   metadataBase: new URL(defaultUrl),
-  title: "Next.js and Supabase Starter Kit",
-  description: "The fastest way to build apps with Next.js and Supabase",
+  title: "myKindle",
+  description: "Organize your favorite Kindle highlights in one place",
 };
 
 const crimsonText = Crimson_Text({
@@ -34,7 +34,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${gantari.variable} ${gantari.className} ${crimsonText.variable} ${crimsonText.className}`}>
+      className={`${gantari.variable} ${gantari.className} ${crimsonText.variable} ${crimsonText.className} selection:text-cyan-400 selection:bg-sky-700/25`}>
       <body className={`antialiased bg-[var(--color-brown-1000)]`}>
         <AppProvider>{children}</AppProvider>
       </body>

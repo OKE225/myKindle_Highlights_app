@@ -24,7 +24,7 @@ const HomePage = () => {
   };
 
   return (
-    <div className="w-[95%] max-w-7xl mx-auto">
+    <div className="w-[95%] max-w-7xl mx-auto mb-6">
       <BooksList />
 
       {uploadError && <p className="text-red-500">{uploadError}</p>}

@@ -29,7 +29,7 @@ export default function UploadFileBtn({ onUpload }: Props) {
 
         <button
           type="button"
-          className="bg-[var(--color-brown-600)] hover:bg-[var(--color-brown-700)]"
+          className="bg-[var(--color-brown-700)] hover:bg-[var(--color-brown-800)]"
           disabled={isUploading}
           onClick={handleClick}>
           {isUploading ? "Loading..." : "Upload File"}

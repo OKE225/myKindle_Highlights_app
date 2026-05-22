@@ -43,14 +43,14 @@ const SocialAuthButtons = () => {
   };
 
   return (
-    <div className="space-y-2">
+    <div className="space-y-1 my-4">
       {providers.map((provider: providerType) => (
         <SocialButton
           key={provider.name}
           action={() => handleOAuthLogin(provider.name)}>
           <Image
             src={provider.icon}
-            className="mr-1"
+            className="mr-2"
             width={20}
             height={20}
             alt={provider.name}

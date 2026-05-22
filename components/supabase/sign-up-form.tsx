@@ -51,52 +51,61 @@ export function SignUpForm({
     <div className={cn("flex flex-col gap-6", className)} {...props}>
       <div>
         <div>
-          <div className="text-2xl">Sign up</div>
-          <div>Create a new account</div>
+          <div className="text-3xl [font-family:var(--font-crimson-text)]">
+            Sign up
+          </div>
+          <div className="text-[var(--color-brown-400)]">
+            Create a new account
+          </div>
         </div>
         <div>
           <SocialAuthButtons />
           <form onSubmit={handleSignUp}>
             <div className="flex flex-col gap-6">
-              <div className="grid gap-2">
-                <label htmlFor="email">Email</label>
-                <input
-                  id="email"
-                  type="email"
-                  placeholder="name@example.com"
-                  required
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-              </div>
-              <div className="grid gap-2">
-                <div className="flex items-center">
-                  <label htmlFor="password">Password</label>
+              <div className="flex flex-col gap-4">
+                <div className="grid gap-2">
+                  <label htmlFor="email">Email</label>
+                  <input
+                    id="email"
+                    type="email"
+                    placeholder="name@example.com"
+                    required
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
                 </div>
-                <input
-                  id="password"
-                  type="password"
-                  placeholder="Enter password"
-                  required
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                />
-              </div>
-              <div className="grid gap-2">
-                <div className="flex items-center">
-                  <label htmlFor="repeat-password">Repeat Password</label>
+                <div className="grid gap-2">
+                  <div className="flex items-center">
+                    <label htmlFor="password">Password</label>
+                  </div>
+                  <input
+                    id="password"
+                    type="password"
+                    placeholder="enter password"
+                    required
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
                 </div>
-                <input
-                  id="repeat-password"
-                  type="password"
-                  placeholder="Repeat password"
-                  required
-                  value={repeatPassword}
-                  onChange={(e) => setRepeatPassword(e.target.value)}
-                />
+                <div className="grid gap-2">
+                  <div className="flex items-center">
+                    <label htmlFor="repeat-password">Repeat Password</label>
+                  </div>
+                  <input
+                    id="repeat-password"
+                    type="password"
+                    placeholder="repeat password"
+                    required
+                    value={repeatPassword}
+                    onChange={(e) => setRepeatPassword(e.target.value)}
+                  />
+                </div>
               </div>
               {error && <p className="text-sm text-red-500">{error}</p>}
-              <button type="submit" className="w-full" disabled={isLoading}>
+              <button
+                type="submit"
+                className="w-full bg-[var(--color-brown-700)]"
+                disabled={isLoading}>
                 {isLoading ? "Creating an account..." : "Sign up"}
               </button>
             </div>

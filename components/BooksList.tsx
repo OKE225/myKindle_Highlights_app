@@ -65,7 +65,7 @@ export default function BooksList() {
         <p>Loading…</p>
       ) : allBooksList.length > 0 ? (
         <>
-          <div className="flex gap-1 mt-2">
+          <div className="flex gap-1 mt-6">
             <SearchInput
               value={searchQuery}
               onChange={setSearchQuery}
@@ -88,7 +88,7 @@ export default function BooksList() {
             </SortElements>
           </div>
 
-          <div className="grid grid-cols-2 gap-1 mt-2">
+          <div className="grid grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1 gap-1 mt-2">
             {paginatedBooks.map((book: Book, id) => (
               <BookCard key={`${id} ${book.title}`} book={book} />
             ))}

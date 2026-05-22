@@ -14,7 +14,7 @@ const SideBooksList = () => {
     decodeURIComponent(Array.isArray(raw) ? raw[0] : raw) || "";
 
   return (
-    <aside className="w-[30%]">
+    <aside className="w-[20%] max-lg:hidden">
       <p className="[font-family:var(--font-crimson-text)] text-2xl ml-2 mb-2">
         Your collection
       </p>
@@ -26,7 +26,7 @@ const SideBooksList = () => {
         return (
           <Link href={href} key={id} className="w-fit block text-sm">
             <div
-              className={`rounded px-2 ${isActive ? "bg-[var(--color-brown-800)] text-[var(--color-brown-100)]" : "text-[var(--color-brown-700)] hover:text-[var(--color-brown-500)]"} line-clamp-1`}>
+              className={`rounded px-2 ${isActive ? "text-[var(--color-brown-500)] underline" : "text-[var(--color-brown-700)] hover:text-[var(--color-brown-500)]"} line-clamp-1`}>
               {title}
             </div>
           </Link>
