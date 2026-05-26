@@ -1,12 +1,12 @@
 "use client";
 
 import { useContext, useEffect, useState } from "react";
-import BookCard from "./book-card";
-import SortElements from "./sort-elements";
-import SearchInput from "./search-input";
-import Pagination from "./pagination";
 import { AppContext } from "@/AppContext";
 import { Book } from "@/lib/types";
+import SearchInput from "@/components/search-input";
+import SortElements from "@/components/sort-elements";
+import BookCard from "@/components/book-card";
+import Pagination from "@/components/pagination";
 
 type SortKey = "Oldest" | "Newest" | "A-Z" | "Z-A";
 
