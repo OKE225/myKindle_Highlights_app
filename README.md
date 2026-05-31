@@ -11,7 +11,7 @@ All Kindle highlights are unified in one place and organized by books. **Users c
 
 ## ⚙️ Technologies
 
-[![Project skills](https://skillicons.dev/icons?i=nextjs,react,ts,tailwind,js,supabase,postgres,jest,git,vercel,css,html)](https://skillicons.dev)
+[![Project skills](https://skillicons.dev/icons?i=nextjs,react,ts,tailwind,js,supabase,postgres,jest,docker,git,vercel,css,html)](https://skillicons.dev)
 
 ## ⭐ Features
 
